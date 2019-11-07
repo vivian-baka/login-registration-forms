@@ -53,5 +53,31 @@ public class UserDAOImpl implements UserDAO {
 		
 		return u;
 	}
+	
+	
+	@Override
+	public User searchUser(String userid) {
+		
+		User u=new User();
+		
+		try {
+			
+			con = MyConnectionProvider.getCon();
+			ps = con.prepareStatement("select * from user where user = ?");
+			ps.setString(1, userid);
+			
+			ResultSet rs = ps.executeQuery();
+			while(rs.next()) {
+				u.setUsername(rs.getString(1));
+				u.setPassword(rs.getString(2));
+				u.setName(rs.getString(3));
+			}
+			
+		}catch(Exception e) {
+			System.out.println(e);
+		}
+		
+		return u;
+	}
 
 }

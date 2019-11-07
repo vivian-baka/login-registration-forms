@@ -13,6 +13,8 @@
 			
 			<caption style="color: #FFFFFF; align: center; font-size: 40px; text-shadow: 0 0 3px #FF0000, 0 0 5px #0000FF;">Registration Page</caption>
 			
+			<tr><td><h3 style="color: #4EB1BA;">${message} </h3></td></tr>
+			
 			<tr>
 				<td>UserName: </td>
 				<td><input type="text" name="username"></td>
